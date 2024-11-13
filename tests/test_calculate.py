@@ -74,21 +74,24 @@ class TestCalculate(unittest.TestCase):
         with self.assertRaises(ValueError) as context:
             calc('square', 'area', [-4])
         self.assertIn(
-            "Value of square sides can not be below 0", str(context.exception)
+            "Value of square sides can not be below 0",
+            str(context.exception)
         )
 
     def test_negative_size_triangle(self):
         with self.assertRaises(ValueError) as context:
             calc('triangle', 'area', [3, -4, 5])
         self.assertIn(
-            "Value of triangle sides can not be below 0", str(context.exception)
+            "Value of triangle sides can not be below 0",
+            str(context.exception)
         )
 
     def test_triangle_inequality(self):
         with self.assertRaises(ValueError) as context:
             calc('triangle', 'area', [1, 2, 10])
         self.assertIn(
-            "Value of this sides can not make triangle", str(context.exception)
+            "Value of this sides can not make triangle",
+            str(context.exception)
         )
 
     def test_incorrect_parameter_count_circle(self):
