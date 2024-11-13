@@ -11,6 +11,7 @@ figs = {
 
 funcs = ['perimeter', 'area']
 
+
 def calc(fig, func, size):
     # Проверка корректности фигуры и функции
     if fig not in figs:

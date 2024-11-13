@@ -6,7 +6,6 @@ from calculate import calc
 class TestCalculate(unittest.TestCase):
 
     # Тесты для корректных вычислений
-
     def test_circle_area(self):
         with patch('builtins.print') as mocked_print:
             result = calc('circle', 'area', [5])
@@ -56,23 +55,13 @@ class TestCalculate(unittest.TestCase):
             )
 
     # Тесты для обработки ошибок
-
     def test_invalid_figure(self):
         with self.assertRaises(ValueError) as context:
             calc('tetrahedron', 'area', [5])
         self.assertIn(
-            "Figure 'tetrahedron' is not available. Available figures: "
+            "Figure'tetrahedron' is not available. Available figures: "
             "['circle', 'square', 'triangle']",
             str(context.exception)
-        )
-
-    def test_invalid_figure(self):
-        with self.assertRaises(ValueError) as context:
-            calc('tetrahedron', 'area', [5])
-        self.assertEqual(
-            str(context.exception),
-            "Figure'tetrahedron' is not available. Available figures: "
-            "['circle', 'square', 'triangle']"
         )
 
     def test_negative_size_circle(self):
