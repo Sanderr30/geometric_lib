@@ -95,7 +95,8 @@ class TestCalculate(unittest.TestCase):
         with self.assertRaises(ValueError) as context:
             calc('circle', 'area', [3, 4])
         self.assertIn(
-            "For the figure 'circle' 1  parameters are required , but was "
+            "For the figure 'circle' 1  "
+            "parameters are required , but was "
             "provided 2",
             str(context.exception)
         )
@@ -104,7 +105,8 @@ class TestCalculate(unittest.TestCase):
         with self.assertRaises(ValueError) as context:
             calc('triangle', 'area', [3, 4])
         self.assertIn(
-            "For the figure 'triangle' 3  parameters are required , but was "
+            "For the figure 'triangle' 3  parameters "
+            "are required , but was "
             "provided 2",
             str(context.exception)
         )
