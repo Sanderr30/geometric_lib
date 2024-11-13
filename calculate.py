@@ -14,9 +14,15 @@ funcs = ['perimeter', 'area']
 def calc(fig, func, size):
     # Проверка корректности фигуры и функции
     if fig not in figs:
-        raise ValueError(f"Figure'{fig}' is not available. Available figures: {list(figs.keys())}")
+        raise ValueError(
+            f"Figure'{fig}' is not available. Available figures: "
+            f"{list(figs.keys())}"
+        )
     if func not in funcs:
-        raise ValueError(f"Function '{func}' is not available. Available functions: ['area', 'perimeter']")
+        raise ValueError(
+            f"Function '{func}' is not available. Available functions: "
+            "['area', 'perimeter']"
+        )
 
     # Получение модуля и функции для вычислений
     module = figs[fig]['module']
@@ -25,9 +31,14 @@ def calc(fig, func, size):
     # Проверка количества параметров
     expected_params = figs[fig]['params']
     if len(size) != expected_params:
-        raise ValueError(f"For the figure '{fig}' {expected_params}  parameters are required , but was provided {len(size)}")
+        raise ValueError(
+            f"For the figure '{fig}' {expected_params}  parameters are "
+            f"required , but was provided {len(size)}"
+        )
 
     # Выполнение функции и вывод результата
     result = func_to_call(*size)
-    print(f'{func.capitalize()} of {fig} with size(s) {size} is {result}')
+    print(
+        f'{func.capitalize()} of {fig} with size(s) {size} is {result}'
+    )
     return result
